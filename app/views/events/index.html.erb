@@ -1,8 +1,10 @@
 <h1>Listing events</h1>
 
+<%= current_user.uid %>
+
 <table>
   <tr>
-    <th>Type</th>
+    <th>Kind</th>
     <th>Vehicle</th>
     <th>Plate</th>
     <th>When</th>
@@ -18,7 +20,7 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.type %></td>
+    <td><%= event.kind %></td>
     <td><%= event.vehicle %></td>
     <td><%= event.plate %></td>
     <td><%= event.when %></td>
