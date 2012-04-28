@@ -1,0 +1,43 @@
+<form method = "post" action = "/search">
+	<table>
+		<tr>
+			<td>
+				<label>
+					Origin
+				</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<select name = "origin">
+					<%@cities.each do |city| %>
+						<option value = '<%=city.id%>'><%= city.name %></option>
+					<%end%>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>
+					Destination
+				</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<select name = "destination">
+					<%@cities.each do |city| %>
+						<option value = '<%=city.id%>' > <%= city.name %></option>
+					<%end%>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>
+					<input type="hidden" name="filter" value = "0">
+					<input type="submit">
+				</label>
+			</td>
+		</tr>
+		

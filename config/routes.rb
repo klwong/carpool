@@ -6,6 +6,8 @@ Carpool::Application.routes.draw do
   resources :cities
   resources :users
 
+  post '/search' => "search#index"
+
   match '/auth/:provider/callback' => 'sessions#create'
   match '/signout' => 'sessions#destroy', :as => :signout
 
