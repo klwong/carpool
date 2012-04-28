@@ -1,0 +1,29 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Provider</th>
+    <th>Uid</th>
+    <th>Contact</th>
+    <th>Years experience</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.provider %></td>
+    <td><%= user.uid %></td>
+    <td><%= user.contact %></td>
+    <td><%= user.years_experience %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

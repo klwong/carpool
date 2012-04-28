@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @event.type %>
+</p>
+
+<p>
+  <b>Vehicle:</b>
+  <%= @event.vehicle %>
+</p>
+
+<p>
+  <b>Plate:</b>
+  <%= @event.plate %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%= @event.when %>
+</p>
+
+<p>
+  <b>From landmark:</b>
+  <%= @event.from_landmark %>
+</p>
+
+<p>
+  <b>To landmark:</b>
+  <%= @event.to_landmark %>
+</p>
+
+<p>
+  <b>Passenger limit:</b>
+  <%= @event.passenger_limit %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @event.cost %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @event.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
