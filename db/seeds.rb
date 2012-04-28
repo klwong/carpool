@@ -30,19 +30,21 @@ City.create(:name => "Pasig")
 City.create(:name => "Pateros")
 City.create(:name => "Quezon City")
 
+# Kind 1 is equal to Driver
+#      0 is equal to Passenger
 Event.create(:cost => 400.0, :from_landmark => "SM Southmall", :passenger_limit => 4, :plate => "WBYXXX", :to_landmark => "Metropoint", :kind => 1, :user_id => 2, :vehicle => "Toyota MRs", :when => DateTime.civil(2012,4,28,23,0,0))
 Route.create(:city_id => 2, :event_id => 1, :kind => 0)
 Route.create(:city_id => 7, :event_id => 1, :kind => 1)
 
-Event.create(:cost => 250.0, :from_landmark => "", :passenger_limit => 4, :plate => "RSG983", :to_landmark => "Chatham Bldg", :kind => 0, :user_id => 4, :vehicle => "", :when => DateTime.civil(2012,4,29,10,0,0))
+Event.create(:cost => 250.0, :from_landmark => "", :passenger_limit => 4, :plate => "", :to_landmark => "Chatham Bldg", :kind => 0, :user_id => 4, :vehicle => "", :when => DateTime.civil(2012,4,29,10,0,0))
 Route.create(:city_id => 7, :event_id => 2, :kind => 0)
 Route.create(:city_id => 3, :event_id => 2, :kind => 1)
 
-Event.create(:cost => 350.0, :from_landmark => "South Station", :passenger_limit => 3, :plate => "YTD738", :to_landmark => "Ayala CBD", :kind => 5, :user_id => 1, :vehicle => "Blue Nissan Frontier", :when => DateTime.civil(2012,4,30,15,0,0))
+Event.create(:cost => 350.0, :from_landmark => "South Station", :passenger_limit => 3, :plate => "YTD738", :to_landmark => "Ayala CBD", :kind => 1, :user_id => 1, :vehicle => "Blue Nissan Frontier", :when => DateTime.civil(2012,4,30,15,0,0))
 Route.create(:city_id => 8, :event_id => 3, :kind => 0)
 Route.create(:city_id => 3, :event_id => 3, :kind => 1)
 
-Event.create(:cost => 100.0, :from_landmark => "MOA", :passenger_limit => 3, :plate => "YTD738", :to_landmark => "Enterprise", :kind => 5, :user_id => 2, :vehicle => "Isuzu Crosswind 2011", :when => DateTime.civil(2012,4,30,8,0,0))
+Event.create(:cost => 100.0, :from_landmark => "MOA", :passenger_limit => 3, :plate => "VAN737", :to_landmark => "Enterprise", :kind => 1, :user_id => 2, :vehicle => "Isuzu Crosswind 2011", :when => DateTime.civil(2012,4,30,8,0,0))
 Route.create(:city_id => 11, :event_id => 3, :kind => 0)
 Route.create(:city_id => 3, :event_id => 3, :kind => 1)
 

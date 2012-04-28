@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Type</th>
+    <th>Kind</th>
     <th>User</th>
     <th>Event</th>
     <th></th>
@@ -12,7 +12,7 @@
 
 <% @invitations.each do |invitation| %>
   <tr>
-    <td><%= invitation.type %></td>
+    <td><%= invitation.kind %></td>
     <td><%= invitation.user_id %></td>
     <td><%= invitation.event_id %></td>
     <td><%= link_to 'Show', invitation %></td>
