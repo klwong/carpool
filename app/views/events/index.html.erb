@@ -1,7 +1,9 @@
 <h1>Listing events</h1>
 
 <%= current_user.uid %>
-
+<BR />
+<%= current_user.id %>
+<%= @jaja %>
 <table>
   <tr>
     <th>Kind</th>
@@ -13,6 +15,7 @@
     <th>Passenger limit</th>
     <th>Cost</th>
     <th>User</th>
+    <th>jaja</th>
     <th></th>
     <th></th>
     <th></th>
@@ -29,6 +32,8 @@
     <td><%= event.passenger_limit %></td>
     <td><%= event.cost %></td>
     <td><%= event.user_id %></td>
+    <td><%= @jaja %></td>
+    <!-- <%= render event.routes %> -->
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>

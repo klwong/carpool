@@ -1,4 +1,7 @@
 Carpool::Application.routes.draw do
+
+  post '/events/join' => "events#join"
+
   resources :invitations
   resources :passengers
   resources :routes

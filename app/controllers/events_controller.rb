@@ -2,8 +2,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
-
+    @jaja = "Hello"
+    @events = Event.find_all_by_user_id(current_user.id)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -80,4 +80,24 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def join
+    @user = User.find(params[:user_id])
+    session[:user_id] = @user.id
+
+    @event = Event.find(params[:event_id])
+    @inv = Invitation.new(:event_id => params[:event_id], :kind => 0, :user_id => params[:event_id])
+
+    respond_to do |format|
+      if @inv.save
+        format.html { redirect_to '/events', notice: 'Successfully joined RideShare!' }
+        format.json { render json: @event, status: :created, location: @event }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @inv.errors, status: :unprocessable_entity }
+      end
+    end
+
+  end
+
 end
