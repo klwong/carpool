@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :cost, :from_landmark, :passenger_limit, :plate, :to_landmark, :type, :user_id, :vehicle, :when
+  attr_accessible :cost, :from_landmark, :passenger_limit, :plate, :to_landmark, :kind, :user_id, :vehicle, :when
   
   belongs_to :user
   has_many :passengers
