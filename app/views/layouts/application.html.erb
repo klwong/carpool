@@ -7,9 +7,56 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+	<header>
+		<div id="tagline-area-small" class="full-width">
+			<div class="container" style="position:relative;">
+				<div id="site-logo">
+					<img src="/img/site-logo.png" alt=""/>
+						<div id="facebook-auth">
+							<% if current_user %>
+								<nav id="top-nav">
+									<%= link_to "My Carpool Events", events_path %>
+								  <%= link_to "My Invitations", invitations_path %>
+									<div id="right-top-nav">
+										 <%= current_user.name %>
+								  	<%= link_to "Sign Out", signout_path %>
+									</div>
+								</nav>
+							<% else %>
+							  <a href="/auth/facebook"><img src="/img/connect-using-facebook_03.png" alt=""/></a>
+							<% end %>
+						</div>
+					
+				</div>
+			
+			</div>
+		</div>
+	</header>
+	<div role="main">
+	<div id="index-mid-area">
+		<div class="container">
+
+			<%= yield %>
+
+		</div>
+	<div class="clearfix bottom-margin-30"></div>
+</div>
+</div>
 
 
-<%= yield %>
+
+<footer>
+<div class="container">
+	<nav id="bottom-nav">
+		<a href=<%= root_path	%>>SEARCH</a>
+		<a href="">CREATE/REQUEST RIDE</a>
+		<a href="">ABOUT</a>
+		<a href="">TERMS &amp; SERVICES</a>
+		<a href="">CONTACT US</a>
+	</nav>
+</div>
+</footer>
 
 </body>
 </html>

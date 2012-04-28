@@ -1,25 +1,6 @@
 
 
-<header>
-	<div id="tagline-area-small" class="full-width">
-		<div class="container" style="position:relative;">
-			<div id="site-logo">
-				<img src="img/site-logo.png" alt=""/>
-			</div>
-			<div id="facebook-auth">
-				<% if current_user %>
-					Welcome <%= current_user.name %>
-				  <%= link_to "Sign Out", signout_path %>
-				<% else %>
-				  <a href="/auth/facebook"><img src="img/connect-using-facebook_03.png" alt=""/></a>
-				<% end %>
-			</div>
-		</div>
-	</div>
-</header>
-<div role="main">
-<div id="index-mid-area">
-	<div class="container">
+
 		<div class="inner-search-container">
 			<div class="span-8 right-margin-28" id="left-section">
 				<%= render 'form'%>
@@ -32,21 +13,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="clearfix bottom-margin-30"></div>
-</div>
-</div>
-<footer>
-<div class="container">
-	<nav id="bottom-nav">
-		<a href="">HOME</a>
-		<a href="">CREATE/REQUEST RIDE</a>
-		<a href="">ABOUT</a>
-		<a href="">TERMS &amp; SERVICES</a>
-		<a href="">CONTACT US</a>
-	</nav>
-</div>
-</footer>
+
+
 
 
 <!-- JavaScript at the bottom for fast page loading -->
