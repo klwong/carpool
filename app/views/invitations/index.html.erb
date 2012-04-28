@@ -3,6 +3,15 @@
 <table>
   <tr>
     <th>Kind</th>
+    <th>Vehicle</th>
+    <th>Plate</th>
+    <th>When</th>
+    <th>From landmark</th>
+    <th>To landmark</th>
+    <th>Passenger limit</th>
+    <th>Cost</th>
+    <! -- -->
+    <th>Kind</th>
     <th>User</th>
     <th>Event</th>
     <th></th>
@@ -12,6 +21,8 @@
 
 <% @invitations.each do |invitation| %>
   <tr>
+    <%= render invitation.event %>
+    <!-- -->
     <td><%= invitation.kind %></td>
     <td><%= invitation.user_id %></td>
     <td><%= invitation.event_id %></td>
