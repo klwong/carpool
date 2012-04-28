@@ -1,8 +1,14 @@
 class SearchController < ApplicationController
   
   def index
-    filter = params[:filter]
     
+    #if !current_user
+    #  redirect_to '/auth/facebook', notice: 'You must login to Facebook to search!'
+    #end
+
+
+    filter = params[:filter]
+
     events = Event.all
     
     @events = []
