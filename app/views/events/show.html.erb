@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Event id:</b>
+  <%= @event.id %>
+</p>
+
+<p>
   <b>Kind:</b>
   <%= @event.kind %>
 </p>
@@ -45,6 +50,11 @@
   <%= @event.user_id %>
 </p>
 
+<form class='button_to' method="post" action="/events/join">
+  <input type="hidden" name="user_id" value="<%= current_user.id %>" />
+  <input type="hidden" name="event_id" value="<%= @event.id %>" />
+  <input type="submit" value="Join Carpool" />
+</form>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
