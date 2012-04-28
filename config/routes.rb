@@ -1,4 +1,16 @@
 Carpool::Application.routes.draw do
+  resources :invitations
+
+  resources :passengers
+
+  resources :routes
+
+  resources :events
+
+  resources :cities
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

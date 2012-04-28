@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @route.type %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @route.city_id %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @route.event_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>
