@@ -1,16 +1,21 @@
-<% if current_user %>
-  Welcome <%= current_user.name %>
-  <%= link_to "Sign Out", signout_path %>
-<% else %>
-  <%= link_to "Sign in with Facebook!", "/auth/facebook" %>
-<% end %>
+
 
 <header>
-<div id="tagline-area" class="full-width">
-	<div id="site-logo">
-		<img src="img/site-logo.png" alt=""/>
+	<div id="tagline-area-small" class="full-width">
+		<div class="container" style="position:relative;">
+			<div id="site-logo">
+				<img src="img/site-logo.png" alt=""/>
+			</div>
+			<div id="facebook-auth">
+				<% if current_user %>
+					Welcome <%= current_user.name %>
+				  <%= link_to "Sign Out", signout_path %>
+				<% else %>
+				  <a href="/auth/facebook"><img src="img/connect-using-facebook_03.png" alt=""/></a>
+				<% end %>
+			</div>
+		</div>
 	</div>
-</div>
 </header>
 <div role="main">
 <div id="index-mid-area">

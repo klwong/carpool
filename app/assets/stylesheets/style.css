@@ -280,7 +280,7 @@ td { vertical-align: top; }
 .right-margin-28{margin-right:28px;}
 .top-padded{padding-top:40px;}
 h1{font: 36px/36px 'CartoGothicStdBook', Arial, sans-serif;letter-spacing: 0;}
-footer{height:100px;background-color:#3e8a24;padding-top:15px}
+footer{height:100px;background-image:url('../img/TextureGreen.jpg');padding-top:15px}
 #bottom-nav{margin:0 auto;text-align:center;}
 #bottom-nav a{color:white;margin:0 40px 0 40px;font: 16px/16px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;}
 #ride-search{height:265px;position:relative;}
@@ -288,23 +288,30 @@ footer{height:100px;background-color:#3e8a24;padding-top:15px}
 .ride-field select{width:275px;}
 .ride-label span{font: 16px/16px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;}
 #tagline-area{height:200px;}
-#tagline-area-small{width:1024px;height:100px;background-color:#3e8a24;margin-bottom: 50px;}
-#site-logo{position:absolute;top:110px;width:100%;text-align:center;}
+#tagline-area-small{height:150px;}
+#site-logo{position:absolute;top:60px;width:100%;text-align:center;}
+#facebook-auth{position:absolute;top:20px;right:20px;}
 .btn-shadow{box-shadow:0 0 5px gray;}
 .right-search-buttons{position:absolute;bottom:0;}
 #btn-create{position:absolute;bottom:0;left:10px;}
 #btn-search_for_passengers{position:absolute;bottom:0;left:130px;}
+#btn-search{position:absolute;bottom:0;left:0px;}
 #left-section{border-right:2px solid #212121;}
 header{
-	height:200px;
+	height:150px;
 	background-image:url('../img/TextureGreen.jpg');
 }
+body{background-image:url('../img/TextureGreen.jpg');}
 #index-mid-area{
 	height:400px;
 	background-image:url('../img/TextureBODY.png');
 }
  
-
+.markconde{
+	height:200px;
+	width:100%;
+	background-color:red;
+}
 
 
 
