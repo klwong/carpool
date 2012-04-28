@@ -45,8 +45,8 @@ Route.create(:city_id => 8, :event_id => 3, :kind => 0)
 Route.create(:city_id => 3, :event_id => 3, :kind => 1)
 
 Event.create(:cost => 100.0, :from_landmark => "MOA", :passenger_limit => 3, :plate => "VAN737", :to_landmark => "Enterprise", :kind => 1, :user_id => 2, :vehicle => "Isuzu Crosswind 2011", :when => DateTime.civil(2012,4,30,8,0,0))
-Route.create(:city_id => 11, :event_id => 3, :kind => 0)
-Route.create(:city_id => 3, :event_id => 3, :kind => 1)
+Route.create(:city_id => 11, :event_id => 4, :kind => 0)
+Route.create(:city_id => 3, :event_id => 4, :kind => 1)
 
 Passenger.create(:event_id => 1, :user_id => 1)
 Passenger.create(:event_id => 1, :user_id => 7)

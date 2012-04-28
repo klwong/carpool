@@ -1,0 +1,28 @@
+
+<form action="/search" id="ride-search" method="post">
+	<h1>RIDE FOR LESS</h1>
+	<div class="ride-field bottom-margin-10">
+		<div class="ride-label">
+			<span>Origin:</span>
+		</div>
+		<select name = "origin">
+			<%@cities.each do |city| %>
+				<option value = '<%=city.id%>'><%= city.name %></option>
+			<%end%>
+		</select>
+	</div>
+	<div class="ride-field bottom-margin-10">
+		<div class="ride-label">
+			<span>Destination:</span>
+		</div>
+		<select name = "destination">
+			<%@cities.each do |city| %>
+				<option value = '<%=city.id%>' > <%= city.name %></option>
+			<%end%>
+		</select>
+	</div>
+	<div class="ride-go">
+		<input type="hidden" name="filter"/>
+		<input type="image" src="img/btn-search_03.png" class="btn-shadow"/>
+	</div>
+</form>
