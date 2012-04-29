@@ -10,10 +10,26 @@ class SearchController < ApplicationController
       session[:user_id] = params[:user_id]
     end
 
-    filter = params[:filter]
-
-    events = Event.all
+    @filter = params[:filter]
+    @filter_0 = params[:filter_0]
+    @filter_1 = params[:filter_1]
     
+    @origin = params[:origin]
+    @destination = params[:destination]
+    
+    events = nil
+    
+    if @filter.nil?
+      if @filter_0.nil? && !@filter_1.nil?
+        events = Event.find_all_by_kind(@filter_1.to_i)
+      elsif !@filter_0.nil? && @filter_1.nil?
+        events = Event.find_all_by_kind(@filter_0.to_i)
+      else
+        events = Event.all
+      end
+    else
+      events = Event.find_all_by_kind(@filter.to_i)
+    end
     @events = []
     i = 0
     
@@ -32,13 +48,15 @@ class SearchController < ApplicationController
           end
         end
         
-        if origin == params[:origin].to_i && destination == params[:destination].to_i
+        if origin == @origin.to_i && destination == @destination.to_i
           @events[i] = event
           i = i + 1 
         end
         
       end
     end
+    
+    @cities = City.all
     
   end
   
