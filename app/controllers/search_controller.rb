@@ -6,6 +6,9 @@ class SearchController < ApplicationController
     #  redirect_to '/auth/facebook', notice: 'You must login to Facebook to search!'
     #end
 
+    unless params[:user_id].nil?
+      session[:user_id] = params[:user_id]
+    end
 
     filter = params[:filter]
 

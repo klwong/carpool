@@ -23,6 +23,9 @@
 	</div>
 	<div class="ride-go">
 		<input type="hidden" name="filter" id="search-filter"/>
+    <% unless current_user.nil? %>
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+    <% end %>
 		<input type="image" src="img/btn-search_03.png" class="btn-shadow"/>
 	</div>
 </form>
