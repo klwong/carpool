@@ -266,69 +266,71 @@ td { vertical-align: top; }
    Author: Mark Conde
    ========================================================================== */
 
+  datalist {display:none;}
+  ul.datalist{background-color:white;margin:0;z-index:9999;padding:0;}
+  ul.datalist li{list-style:none;font: 15px/15px 'CartoGothicStdBook', Arial, sans-serif;letter-spacing: 0;text-decoration: none;margin-bottom:5px;display:block;padding:3px 0px 3px 0px}
+  ul.datalist li:hover{list-style:none;font: 15px/15px 'CartoGothicStdBook', Arial, sans-serif;letter-spacing: 0;text-decoration: none;margin-bottom:5px;display:block;background-color:#CCC;padding:3px 0px 3px 0px}
+   
 .span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16{float:left}
 .span-1{width:40px;} .span-2{width:80px;}.span-3{width:120px;}.span-4{width:160px;}.span-5{width:240px;}.span-6{width:280px;}.span-7{width:320px;}.span-8{width:360px;}.span-9{width:400px;}.span-10{width:440px;}.span-11{width:480px;}.span-12{width:520px;}.span-13{width:560px;}.span-14{width:600px;}.span-15{width:640px;}.span-16{width:680px;}
 .full-width{width:100%;}
+.search-area-bar{width:280px;}
 .temp-bordered{border:1px solid red;}
 .container{ margin:0 auto; width:960px; }
-.inner-search-container{margin: 0 auto; width:750px;height:265px;padding-top:70px;}
-.inner-search-container h1{margin:0 0 16px 0;}
+.container2{ margin:0 auto; width:900px; }
+.inner-search-container{margin: 0 auto; width:750px;height:213px;padding-top:70px;}
+.inner-search-container h1{margin:0 0 16px 0;color: #444;}
 .inner-search-container > div{height:265px;position:relative;}
 .centered-text{ margin:0 auto; text-align:center; }  
 .bottom-margin-10{margin-bottom:10px;}
 .bottom-margin-30{margin-bottom:30px;}
+.top-spacing-30{padding-top:30px;}
 .right-margin-28{margin-right:28px;}
 .top-padded{padding-top:40px;}
+.index-description{font: 18px/27px 'CartoGothicStdItalic', Arial, sans-serif;}
 h1{font: 36px/36px 'CartoGothicStdBook', Arial, sans-serif;letter-spacing: 0;}
+h2{font: 18px/18px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;}
+h3{font: 16px/16px 'CartoGothicStdBook', Arial, sans-serif;letter-spacing: 0;}
 footer{height:100px;background-image:url('../img/TextureGreen.jpg');padding-top:15px}
-
-#top-nav{margin:0 30px 0px 0px;text-align:center;}
-#top-nav a{color:green;margin:0 15px 0 0px;font: 14px/14px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;text-decoration: none;}
-
-#right-top-nav{position:absolute; margin:0 0;text-align:right; float:right; top: 0px; left:520px; width: 300px; font: 14px/14px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;text-decoration: none;}
-#right-top-nav a{right:0;color:green;margin:0 15px 0 15px;font: 14px/14px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;text-decoration: none;}
-
-#bottom-nav{margin:0 auto;text-align:center;}
+#bottom-nav{margin:0 auto 20px auto;text-align:center;}
 #bottom-nav a{color:white;margin:0 40px 0 40px;font: 14px/14px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;text-decoration: none;}
-
-#ride-search{height:265px;position:relative;}
+#ride-search{height:213px;position:relative;}
+.centered-content{text-align:center;color:#FFF;}
+#copyright{font: 12px/12px 'CartoGothicStdItalic', Arial, sans-serif;}
 .ride-go{position:absolute;bottom:0;}
 .ride-field select{width:275px;}
 .ride-label span{font: 16px/16px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;}
 #tagline-area{height:200px;}
-#tagline-area-small{height:150px;}
-#site-logo{position:absolute;top:60px;width:100%;text-align:center;}
-#facebook-auth {
-position: absolute;
-top: 100px;
-left: 90px;
-}
+#tagline-area-small{height:100px; background-image:url('../img/TextureGreen.jpg');}
+#site-logo{position:absolute;top:10px;width:100%;text-align:center;}
+#facebook-auth {position: absolute;top: 100px;left: 90px;}
 .btn-shadow{box-shadow:0 0 5px gray;}
 .right-search-buttons{position:absolute;bottom:0;}
 #btn-create{position:absolute;bottom:0;left:10px;}
 #btn-search_for_passengers{position:absolute;bottom:0;left:130px;}
 #btn-search{position:absolute;bottom:0;left:0px;}
 #left-section{border-right: 1px solid #CCC;}
-header{
-	height:150px;
-	background-image:url('../img/TextureGreen.jpg');
-}
+header{	height:150px;	background-image:url('../img/TextureBODY.png');}
 body{background-image:url('../img/TextureGreen.jpg');}
-#index-mid-area{
-	height:400px;
-	background-image:url('../img/TextureBODY.png');
+#index-mid-area{	height:400px;	background-image:url('../img/TextureBODY.png'); position: relative; width: 100%;}
+#standard-mid-area{	height:510px;	background-image:url('../img/TextureBODY.png');}
+#top-nav{margin:0 30px 0px 0px;text-align:center;}
+#top-nav a{color:green;margin:0 15px 0 0px;font: 14px/14px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;text-decoration: none;}
+div[role=main]{background-image:url('../img/TextureBODY.png');}
+#right-top-nav{position:absolute; margin:0 0;text-align:right; float:right; top: 0px; left:520px; width: 300px; font: 14px/14px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;text-decoration: none;}
+#right-top-nav a{right:0;color:green;margin:0 15px 0 15px;font: 14px/14px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;text-decoration: none;}
+#search-form{border-right: 1px solid #CCC;}
+.search-ride-table thead tr td{font: 16px/16px 'CartoGothicStdBold', Arial, sans-serif;letter-spacing: 0;text-decoration: none;padding-bottom:10px;}
+.search-ride-table tbody tr td{font: 16px/16px 'CartoGothicStdBook', Arial, sans-serif;letter-spacing: 0;text-decoration: none;}
+label{font: 12px/12px 'CartoGothicStdBook', Arial, sans-serif;letter-spacing: 0;text-decoration: none;}
+.filter-list{
+	margin:30px 0 20px 0;
 }
- 
-.markconde{
-	height:200px;
-	width:100%;
-	background-color:red;
-}
-
-
-
-
-
+.col-time {width:130px;}
+.col-role {width:115px;}
+.col-posted-by {width:120px;}
+.search-entry td{padding:5px}
+.passenger-entry{background-color:#c2de8f;}
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
