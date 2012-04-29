@@ -8,3 +8,5 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 
 
 // place any jQuery/helper plugins in here, instead of separate, slower script files.
+$.fn.datalist=function(){return typeof this[0].list==="object"&&this[0].list!==undefined?this:this.each(function(){var a=$(this),d=$("#"+a.attr("list")),g=d.find("option"),c=a.width(),h=a.height(),b=$("<ul>",{"class":"datalist",width:c,css:{position:"absolute",left:0,top:h+6}});c=$("<div>").css("position","relative");if(d.length)g.each(function(e,f){$("<li>").append('<span class="value">'+f.value+"</span>").append('<span class="label">'+f.label+"</span>").appendTo(b)});else return this;a.wrap(c);
+b.hide().insertAfter(a);a.focus(function(){b.show()});a.blur(function(){b.hide()});a.next().find("li").mousedown(function(){var e=$(this).find("span.value").text();a.val(e)})})};

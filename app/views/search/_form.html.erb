@@ -1,9 +1,6 @@
-<form action="/search" id="ride-search" method="post">
-	<div class="ride-field bottom-margin-10">
-		<div class="ride-label">
-			<span>Origin:</span>
-		</div>
-		<select name = "origin">
+<form action="/search" method="post" id="search-form">
+	<h2>Origin:</h2>
+	  <select name = "origin" class="search-area-bar">
 			<%@cities.each do |city| %>
 				<%if city.id == @origin.to_i%>
 					<option value = '<%=city.id%>' selected ="selected"> <%= city.name %></option>
@@ -12,12 +9,8 @@
 				<%end%>
 			<%end%>
 		</select>
-	</div>
-	<div class="ride-field bottom-margin-10">
-		<div class="ride-label">
-			<span>Destination:</span>
-		</div>
-		<select name = "destination">
+	<h2>Destination:</h2>
+	  <select name = "destination" >
 			<%@cities.each do |city| %>
 				<%if city.id == @destination.to_i%>
 					<option value = '<%=city.id%>' selected ="selected"> <%= city.name %></option>
@@ -26,27 +19,34 @@
 				<%end%>
 			<%end%>
 		</select>
+	<h2>Time:</h2>
+	<div class="bottom-margin-30"><select name="" id="">
+		<option value=""></option>
+		<option value="">12:00 AM</option>
+	</select>
+	to
+	<select name="" id="">
+		<option value=""></option>
+		<option value="">12:00 AM</option>
+	</select>
 	</div>
 	
-	<div>
-	<%if !@filter_0.nil? || @filter == "0"%>
-		<input type="checkbox" name="filter_0"/ value = "0" checked><label for="filter_passenger">Passenger</label>
-	<%else%>
-		<input type="checkbox" name="filter_0"/ value = "0"><label for="filter_passenger">Passenger</label>
-	<%end%>
-	
-	<%if !@filter_1.nil? || @filter == "1"%>
-		<input type="checkbox" name="filter_1"/ value = "1"checked><label for="filter_passenger">Car Provider</label>
-	<%else%>
-		<input type="checkbox" name="filter_1"/ value = "1"><label for="filter_passenger">Car Provider</label>
-	<%end%>
-	
+	<div class="filter-list">
+	<div><span>
+		<%if !@filter_0.nil? || @filter == "0"%>
+			<input type="checkbox" name="filter_0"/ value = "0" checked>
+		<%else%>
+			<input type="checkbox" name="filter_0"/ value = "0">
+		<%end%>
+	</span><label for="filter_passenger">Passenger</label></div>
+	<div><span>
+		<%if !@filter_1.nil? || @filter == "1"%>
+			<input type="checkbox" name="filter_1"/ value = "1"checked>
+		<%else%>
+			<input type="checkbox" name="filter_1"/ value = "1">
+		<%end%>	
+	</span><label for="filter_passenger">Car Provider</label></div>
+	<div><span><input type="checkbox" name="filter_premium"/></span><label for="filter_passenger">Premium Car Provider</label></div>
 	</div>
-	
-	<div class="ride-go">
-    <% unless current_user.nil? %>
-      <input type="hidden" name="user_id" value="<%= current_user.id %>">
-    <% end %>
-		<input type="image" src="img/btn-search_03.png" class="btn-shadow"/>
-	</div>
+	<div><input type="image" src="img/btn-search_03.png" class="btn-shadow" /></div>
 </form>

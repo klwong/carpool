@@ -14,6 +14,10 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
 
+    if !current_user
+      redirect_to '/auth/facebook', notice: 'You must login to Facebook to search!'
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }
