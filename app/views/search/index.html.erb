@@ -1,34 +1,71 @@
 
-<table>
-  <tr>
-    <th>Kind</th>
-    <th>Vehicle</th>
-    <th>Plate</th>
-    <th>When</th>
-    <th>From landmark</th>
-    <th>To landmark</th>
-    <th>Passenger limit</th>
-    <th>Cost</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.kind %></td>
-    <td><%= event.vehicle %></td>
-    <td><%= event.plate %></td>
-    <td><%= event.when %></td>
-    <td><%= event.from_landmark %></td>
-    <td><%= event.to_landmark %></td>
-    <td><%= event.passenger_limit %></td>
-    <td><%= event.cost %></td>
-    <td><%= event.user_id %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+
+<div role="main">
+<div id="standard-mid-area">
+	<div class="container2">
+		<div class="span-8 right-margin-28">
+			<h3>Available trips for:</h3>
+			<%= render 'form'%>
+		</div>
+		<div class="span-10 top-spacing-30">
+		<table class="search-ride-table">
+			
+			<table>
+			  <thead>
+			    <tr>Kind</tr>
+			    <tr>When</tr>
+			    <tr>From landmark</tr>
+			    <tr>To landmark</tr>
+			    <tr>Passenger limit</tr>
+			    <tr>Cost</tr>
+			    <tr>by</tr>
+			    <tr></tr>
+			  </thead>
+				<tbody>
+			<% @events.each do |event| %>
+			  <tr>
+			    <td><%= event.kind %></td>
+			    <td><%= event.when %></td>
+			    <td><%= event.from_landmark %>
+					<%= City.find(Route.find_by_event_id(event.id, :conditions => {:kind => 0}).city_id).name%>
+					</td>
+			    <td><%= event.to_landmark %>
+						<%= City.find(Route.find_by_event_id(event.id, :conditions => {:kind => 1}).city_id).name%>
+					</td>
+			    <td><%= event.passenger_limit %></td>
+			    <td><%= event.cost %></td>
+			    <td><%= User.find(event.user_id).name %></td>
+			    <td><%= link_to 'Show', event %></td>
+			  </tr>
+			<% end %>
+			</tbody>
+			</table>
+		</table>
+		</div>
+	</div>
+</div>
+</div>
+
+</footer>
+
+
+<!-- JavaScript at the bottom for fast page loading -->
+
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!-- scripts concatenated and minified via build script -->
+<script src="js/plugins.js"></script>
+<script src="js/script.js"></script>
+<!-- end scripts -->
+
+<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+     mathiasbynens.be/notes/async-analytics-snippet -->
+<script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
