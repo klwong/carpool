@@ -2,7 +2,6 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @jaja = "Hello"
     @events = Event.find_all_by_user_id(current_user.id)
     respond_to do |format|
       format.html # index.html.erb
@@ -82,8 +81,7 @@ class EventsController < ApplicationController
   end
 
   def join
-    @user = User.find(params[:user_id])
-    session[:user_id] = @user.id
+    session[:user_id] = params[:user_id]
 
     @event = Event.find(params[:event_id])
     @inv = Invitation.new(:event_id => params[:event_id], :kind => 0, :user_id => params[:event_id])
