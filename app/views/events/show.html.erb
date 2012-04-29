@@ -50,11 +50,17 @@
   <%= @event.user_id %>
 </p>
 
-<form class='button_to' method="post" action="/events/join">
-  <input type="hidden" name="user_id" value="<%= current_user.id %>" />
-  <input type="hidden" name="event_id" value="<%= @event.id %>" />
-  <input type="submit" value="Join Carpool" />
-</form>
+<% unless current_user.nil? %>
+  <form class='button_to' method="post" action="/events/join">
+    <input type="hidde" name="user_id" value="<%= current_user.id %>">
+    <input type="hidden" name="event_id" value="<%= @event.id %>" />
+    <input type="submit" value="Join Carpool" />
+  </form>
+<% else %>
+  Click to Login to Facebook
+<% end %>
+
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
